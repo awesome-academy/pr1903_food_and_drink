@@ -7,7 +7,7 @@ class Consumable < ApplicationRecord
 
   validates :name, presence: true, 
                    length: {minimum: 1, maximum: 100}
-  validates :picture, presence: true
+  # validates :picture, presence: true
   validates :description, presence: true
   validates :price, presence: true
   validates :quantity, presence: true
