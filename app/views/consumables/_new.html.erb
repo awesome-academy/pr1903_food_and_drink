@@ -1,0 +1,39 @@
+<div
+  id="consumable_modal_new"
+  class="modal fade bd-example-modal-lg"
+  aria-hidden="true"
+  aria-labelledby="myLargeModalLabel"
+  role="dialog"
+  tabindex="-1"
+>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Add new consumable</h5>
+      </div>
+
+      <div class="modal-body">
+        <%= form_for @consumable, remote: true do |f| %>
+          <%= render "shared/error_messages", object: f.object %>
+          
+          <%= f.label :name %>
+          <%= f.text_field :name, class: "form-control" %>
+
+          <%= f.label :picture %>
+          <%= f.file_field :picture, class: "form-control" %>
+
+          <%= f.label :description %>
+          <%= f.text_area :description, class: "form-control" %>
+
+          <%= f.label :price %>
+          <%= f.number_field :price, class: "form-control" %>
+
+          <%= f.label :quantity %>
+          <%= f.number_field :quantity, class: "form-control" %>
+
+          <%= f.submit "Add new consumable", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

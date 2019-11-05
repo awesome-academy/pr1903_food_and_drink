@@ -1,0 +1,14 @@
+<% @consumables.each do |consumable| %>
+  <div class="col-3">
+    <div class="card">
+      <%# image_tag consumable.picture.preview(resize_to_limit: [100, 100]) %>
+      <div class="card-body">
+        <p class="card-text">Name: comsumable.name</p>
+        <p class="card-text">Price: consumable.price</p>
+        <p class="card-text">Rating: </p>            
+        <p class="card-text">Out of stock</p>
+      </div>
+    </div>
+  </div>
+<% end %>
+<%= will_paginate @consumables%>
