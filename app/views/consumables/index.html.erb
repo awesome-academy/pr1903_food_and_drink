@@ -1,0 +1,9 @@
+<div class="container">
+  <div>
+    <%= link_to 'Add Consumable', new_consumable_path, class: "btn btn-primary", remote: true %>
+  </div>
+  <div class="row">
+      <%= render "consumables/consumables" %>
+    </div>
+</div>
+<div id="consumable_modal"></div> 
