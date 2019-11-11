@@ -1,4 +1,6 @@
 class Cart < ApplicationRecord
+  include Discard::Model
+  
   has_many :cart_items
   has_many :consumables, through: :cart_items
 

@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  include Discard::Model
+
   has_one :user_profile
   has_many :carts
   has_many :suggestions

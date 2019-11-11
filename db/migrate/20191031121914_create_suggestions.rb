@@ -6,6 +6,8 @@ class CreateSuggestions < ActiveRecord::Migration[5.2]
       t.string :picture
       t.string :description
       t.string :text
+      t.datetime :discarded_at
+      t.index :discarded_at
 
       t.timestamps
     end
