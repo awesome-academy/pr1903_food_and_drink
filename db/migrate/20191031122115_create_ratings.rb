@@ -1,4 +1,4 @@
-class CreateRatings < ActiveRecord::Migration[6.0]
+class CreateRatings < ActiveRecord::Migration[5.2]
   def change
     create_table :ratings do |t|
       t.references :consumable, null: false, foreign_key: true

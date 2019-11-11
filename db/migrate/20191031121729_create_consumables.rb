@@ -1,4 +1,4 @@
-class CreateConsumables < ActiveRecord::Migration[6.0]
+class CreateConsumables < ActiveRecord::Migration[5.2]
   def change
     create_table :consumables do |t|
       t.string :name

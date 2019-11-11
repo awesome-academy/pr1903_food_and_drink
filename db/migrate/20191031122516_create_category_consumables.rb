@@ -1,4 +1,4 @@
-class CreateCategoryConsumables < ActiveRecord::Migration[6.0]
+class CreateCategoryConsumables < ActiveRecord::Migration[5.2]
   def change
     create_table :category_consumables do |t|
       t.references :consumable, null: false, foreign_key: true
