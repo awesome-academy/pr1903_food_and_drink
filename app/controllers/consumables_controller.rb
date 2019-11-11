@@ -30,9 +30,15 @@ class ConsumablesController < ApplicationController
   end
   
   def update
-    respond_to do |format|
-      format.js
+    if @consumable.update_attributes(consumable_params)
+      respond_to do |format|
+        format.js
+      end      
+    else
+      render :index
+      flash[:danger] = "consumable not created"
     end
+
   end
   
   def show  
@@ -46,5 +52,9 @@ class ConsumablesController < ApplicationController
 
   def set_consumable
     @consumable = Consumable.find(params[:id])
+  end
+
+  def consumable_params
+    params.require(:consumable).permit()
   end
 end
