@@ -1,0 +1,18 @@
+vi:
+  users:
+    edit:
+      name: "Tên"
+      email: "địa chỉ email"
+      password: "mật khẩu"
+      password_confirmation: "Xác nhận mật khẩu"
+    new:
+      name: "Tên"
+      email: "địa chỉ email"
+      password: "mật khẩu"
+      password_confirmation: "Xác nhận mật khẩu"
+    show:
+  sessions:
+    new:
+      email: "địa chỉ email"
+      password: "mật khẩu"
+
