@@ -52,7 +52,6 @@ class ConsumablesController < ApplicationController
   end
 
   private
-
   def find_consumables
     consumables = Consumable.all
     @consumables = consumables.not_discarded.paginate(page: params[:page], per_page: 10)
@@ -60,8 +59,10 @@ class ConsumablesController < ApplicationController
 
   def find_consumable
     @consumable = Consumable.find_by(id: params[:id])
-    redirect_to root_path
-    flash[:danger] = "Consumable not found"
+    unless @consumable
+      redirect_to root_path 
+      flash[:danger] = "Consumable not found"
+    end
   end
 
   def consumable_params
