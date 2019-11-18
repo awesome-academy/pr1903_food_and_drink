@@ -1,8 +1,8 @@
 class ConsumablesController < ApplicationController
-  before_action :set_consumable, only: [:edit, :update, :show, :destroy]
+  before_action :find_consumable, except: [:index, :new, :create]
+  before_action :find_consumables, except: [:show]
 
   def index
-    @consumables = Consumable.paginate(page: params[:page], per_page: 10)
   end
   
   def new
@@ -13,7 +13,7 @@ class ConsumablesController < ApplicationController
   end
   
   def create
-    @consumable = Consumable.new
+    @consumable = Consumable.new(consumable_params)
     if @consumable.save
       respond_to do |format|
         format.js
@@ -45,16 +45,26 @@ class ConsumablesController < ApplicationController
   end
   
   def destroy
-  
+    @consumable.discard
+    respond_to do |format|
+      format.js
+    end
   end
 
   private
 
-  def set_consumable
-    @consumable = Consumable.find(params[:id])
+  def find_consumables
+    consumables = Consumable.all
+    @consumables = consumables.not_discarded.paginate(page: params[:page], per_page: 10)
+  end
+
+  def find_consumable
+    @consumable = Consumable.find_by(id: params[:id])
+    redirect_to root_path
+    flash[:danger] = "Consumable not found"
   end
 
   def consumable_params
-    params.require(:consumable).permit()
+    params.require(:consumable).permit(:name, :description, :price, :quantity, pictures: [])
   end
 end

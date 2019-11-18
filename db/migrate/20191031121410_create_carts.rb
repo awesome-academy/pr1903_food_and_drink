@@ -4,6 +4,8 @@ class CreateCarts < ActiveRecord::Migration[5.2]
       t.references :user, null: false, foreign_key: true
       t.integer :price_total
       t.integer :status, default: 0
+      t.datetime :discarded_at
+      t.index :discarded_at
 
       t.timestamps
     end

@@ -10,25 +10,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_31_122516) do
+ActiveRecord::Schema.define(version: 2019_11_11_125117) do
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.integer "record_id", null: false
+    t.integer "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
 
   create_table "cart_items", force: :cascade do |t|
     t.integer "cart_id", null: false
     t.integer "price"
     t.integer "consumable_id", null: false
     t.integer "quantity"
+    t.datetime "discarded_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["cart_id"], name: "index_cart_items_on_cart_id"
     t.index ["consumable_id"], name: "index_cart_items_on_consumable_id"
+    t.index ["discarded_at"], name: "index_cart_items_on_discarded_at"
   end
 
   create_table "carts", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "price_total"
     t.integer "status", default: 0
+    t.datetime "discarded_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["discarded_at"], name: "index_carts_on_discarded_at"
     t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
@@ -49,13 +74,15 @@ ActiveRecord::Schema.define(version: 2019_10_31_122516) do
 
   create_table "consumables", force: :cascade do |t|
     t.string "name"
-    t.string "picture"
+    t.string "pictures"
     t.text "description"
     t.integer "price"
     t.integer "quantity", default: 0
     t.float "rate_average"
+    t.datetime "discarded_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["discarded_at"], name: "index_consumables_on_discarded_at"
   end
 
   create_table "ratings", force: :cascade do |t|
@@ -74,8 +101,10 @@ ActiveRecord::Schema.define(version: 2019_10_31_122516) do
     t.string "picture"
     t.string "description"
     t.string "text"
+    t.datetime "discarded_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["discarded_at"], name: "index_suggestions_on_discarded_at"
     t.index ["user_id"], name: "index_suggestions_on_user_id"
   end
 
@@ -95,8 +124,10 @@ ActiveRecord::Schema.define(version: 2019_10_31_122516) do
     t.string "name"
     t.string "email"
     t.string "password_digest"
+    t.datetime "discarded_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["discarded_at"], name: "index_users_on_discarded_at"
     t.index ["email"], name: "index_users_on_email"
   end
 

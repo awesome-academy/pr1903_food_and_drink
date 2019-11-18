@@ -1,5 +1,5 @@
 <div
-  id="consumable_modal_new"
+  id="consumable_modal_edit"
   class="modal fade bd-example-modal-lg"
   aria-hidden="true"
   aria-labelledby="myLargeModalLabel"
@@ -9,7 +9,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5>Add new consumable</h5>
+        <h5>Edit consumable</h5>
       </div>
 
       <div class="modal-body">
@@ -31,7 +31,7 @@
           <%= f.label :quantity %>
           <%= f.number_field :quantity, class: "form-control" %>
 
-          <%= f.submit "Add new consumable", class: "btn btn-primary" %>
+          <%= f.submit "Update consumable", class: "btn btn-primary" %>
         <% end %>
       </div>
     </div>
