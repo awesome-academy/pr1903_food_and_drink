@@ -1,0 +1,23 @@
+<div class="row justify-content-md-center">
+  <div class="col-6">
+    <div class="row">
+      <div class="col-6">
+        <%= image_tag @main_image.first, class: "img-fluid" %>
+      </div>
+
+      <div class="col-6">
+        <p>name: <%= @consumable.name %></p>
+        <p>price: <%= @consumable.price %></p>
+        <p>quantity: <%= @consumable.quantity %></p>
+        <p>rating</p>
+      </div>
+    </div>
+
+    <hr />
+
+    <div>
+      <h2>Description</h2>
+      <p><%= @consumable.description %></p>
+    </div>
+  </div>
+</div>

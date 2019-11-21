@@ -1,22 +1,24 @@
 <% @consumables.each do |consumable| %>
   <div class="col-3">
-    <div class="card">
-      <%# image_tag consumable.picture.preview(resize_to_limit: [100, 100]) %>
-      <div class="card-body">
-        <p class="card-text">Name: <%= consumable.name %></p>
-        <p class="card-text">Price: <%= consumable.price %></p>
-        <p class="card-text">Rating: </p>            
-        <p class="card-text">Out of stock</p>
-        <small><%= link_to "edit", edit_consumable_path(consumable), remote: true %></small>
-        <small>
-          <%= link_to "delete", consumable, 
-                                method: :delete, 
-                                remote: true, 
-                                data: {confirm: "Are you sure?"} 
-          %>
-        </small>
+    <%= link_to consumable do %>
+      <div class="card">
+        <%# image_tag consumable.picture.preview(resize_to_limit: [100, 100]) %>
+        <div class="card-body">
+          <p class="card-text">Name: <%= consumable.name %></p>
+          <p class="card-text">Price: <%= consumable.price %></p>
+          <p class="card-text">Rating: </p>            
+          <p class="card-text">Out of stock</p>
+          <small><%= link_to "edit", edit_consumable_path(consumable), remote: true %></small>
+          <small>
+            <%= link_to "delete", consumable, 
+                                  method: :delete, 
+                                  remote: true, 
+                                  data: {confirm: "Are you sure?"} 
+            %>
+          </small>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 <% end %>
 <%= will_paginate @consumables%>
