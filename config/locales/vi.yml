@@ -2,7 +2,7 @@ vi:
   users:
     edit:
       name: "Tên"
-      email: "địa chỉ email"
+      email: "Địa chỉ email"
       password: "mật khẩu"
       password_confirmation: "Xác nhận mật khẩu"
     new:
@@ -10,7 +10,13 @@ vi:
       email: "địa chỉ email"
       password: "mật khẩu"
       password_confirmation: "Xác nhận mật khẩu"
+      welcome to Foods and Drinks: "chào mừng bạn đến với Foods and Drinks"
+      sign up: " đăng ký"
     show:
+      logout: "Đăng xuất"
+      edit: "chỉnh sửa"
+    index:
+      all users: "Tất cả tài khoản"
   sessions:
     new:
       email: "địa chỉ email"

@@ -10,8 +10,13 @@ en:
       email: "Email"
       password: "password"
       password_confirmation: "password confirmation"
+      welcome to Foods and Drinks: "welcome to Foods and Drinks"
+      sign up: "sign up"
     show:
-
+      logout: "Logout"
+      edit: "Edit"
+    index:
+      all users: "All users"
   sessions:
     new:
       email: "Email"
