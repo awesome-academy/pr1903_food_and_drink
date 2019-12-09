@@ -21,3 +21,17 @@ en:
     new:
       email: "Email"
       password: "password"
+  consumables:
+    index:
+      add consumable: "Add consumables"
+      name: "name"
+      search: "search"
+      name: "name"
+      price: " price"
+      rating: "rating"
+      out of stock: "Out of stock"
+    show:
+      name: "name"
+      price: " price"
+      rating: "rating"
+      out of stock: "Out of stock"
