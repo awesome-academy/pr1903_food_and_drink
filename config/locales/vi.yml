@@ -21,4 +21,16 @@ vi:
     new:
       email: "địa chỉ email"
       password: "mật khẩu"
+  consumables:
+    index:
+      search: "Tìm kiếm"
+      add consumable: " Thêm mặt hàng"
+      name: "tên"
+    show:
+      name: "tên"
+      price: "giá"
+      rating: "đánh giá"
+      out of stock: " hết hàng "
+  consumable:
+    name: "tên"
 

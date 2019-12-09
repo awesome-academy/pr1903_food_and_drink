@@ -1,0 +1,13 @@
+  <div class="col-3">
+    <div class="card">
+      <%# image_tag consumable.picture.preview(resize_to_limit: [100, 100]) %>
+      <div class="card-body">
+        <p class="card-text"><%= t(".name") %>: <%= @consumable.name %></p>
+        <p class="card-text"><%= t(".price") %>: <%= @consumable.price %></p>
+        <p class="card-text"><%= t("rating") %>: </p>
+        <p class="card-text"><%= t(".out of stock") %></p>
+      </div>
+    </div>
+  </div>
+<%= link_to "English", locale: "en" %>
+<%= link_to "Vietnamese", locale: "vi" %>
