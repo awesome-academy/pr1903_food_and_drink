@@ -27,10 +27,12 @@ vi:
       add consumable: " Thêm mặt hàng"
       name: "tên"
     show:
+      confirmation: " Xác nhận "
+      rating: "Đánh giá "
+    consumables:
       name: "tên"
       price: "giá"
       rating: "đánh giá"
       out of stock: " hết hàng "
-  consumable:
-    name: "tên"
-
+    ratings:
+      rating not found: "không tìm thấy đánh giá"
