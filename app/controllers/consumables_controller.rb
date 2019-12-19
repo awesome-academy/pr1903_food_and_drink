@@ -1,4 +1,6 @@
 class ConsumablesController < ApplicationController
+  include ConsumablesHelper
+
   before_action :find_consumable, except: [:index, :new, :create]
   before_action :find_consumables, except: [:show]
 
@@ -18,6 +20,7 @@ class ConsumablesController < ApplicationController
   end
 
   def show
+    @rating = calculate_rate(@consumable.ratings)
   end
 
   def create

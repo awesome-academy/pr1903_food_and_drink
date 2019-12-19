@@ -4,10 +4,16 @@
       <div class="card-body">
         <p class="card-text"><%= t(".name") %>: <%= @consumable.name %></p>
         <p class="card-text"><%= t(".price") %>: <%= @consumable.price %></p>
-        <p class="card-text"><%= t("rating") %>: </p>
+        <p class="card-text"><%= t(".rating") %>: </p>
         <p class="card-text"><%= t(".out of stock") %></p>
       </div>
     </div>
   </div>
+<h3> <%=t(".rating") %>:<span style="color: red"><%= @rating %></span> </h3>
+<%= form_for (Rating.new) do |f| %>
+  <%= f.hidden_field :consumable_id, value: @consumable.id %>
+  <%= f.text_field :rating %>
+  <%= f.submit t(".confirmation") %>
+<% end %>
 <%= link_to "English", locale: "en" %>
 <%= link_to "Vietnamese", locale: "vi" %>
