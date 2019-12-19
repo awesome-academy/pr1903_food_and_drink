@@ -1,4 +1,10 @@
 vi:
+  layouts:
+    navbar:
+      dropdown: "Dropdown"
+      sign_up: "Dang ki"
+      login: "Dang nhap"
+      logout: "Dang xuat"
   users:
     edit:
       name: "Tên"
@@ -11,7 +17,7 @@ vi:
       password: "mật khẩu"
       password_confirmation: "Xác nhận mật khẩu"
       welcome to Foods and Drinks: "chào mừng bạn đến với Foods and Drinks"
-      sign up: " đăng ký"
+      sign_up: " đăng ký"
     show:
       logout: "Đăng xuất"
       edit: "chỉnh sửa"

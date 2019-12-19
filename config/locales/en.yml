@@ -1,4 +1,10 @@
 en:
+  layouts:
+    navbar:
+      dropdown: "Dropdown"
+      sign_up: "Sign up"
+      login: "Log in"
+      logout: "Log Out"
   users:
     edit:
       name: "Name"
