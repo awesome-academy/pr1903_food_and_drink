@@ -2,6 +2,9 @@
   <%= text_field_tag :term %>
   <%= submit_tag t(".search") %>
 <% end %>
+<% @categories.each do |category| %>
+<%= link_to category.category, category %>
+<% end %>
 <div class="container">
   <div>
     <%= link_to t(".add consumable"), new_consumable_path, class: "btn btn-primary", remote: true %>
@@ -11,5 +14,3 @@
   </div>
 </div>
 <div id="consumable_modal"></div>
-<%= link_to "English", locale: "en" %>
-<%= link_to "Vietnamese", locale: "vi" %>

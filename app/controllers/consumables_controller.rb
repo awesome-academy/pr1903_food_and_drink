@@ -5,6 +5,7 @@ class ConsumablesController < ApplicationController
   before_action :find_consumables, except: [:show]
 
   def index
+    @categories = Category.all
     @consumables = if params[:term]
       Consumable.by_name(params[:term]).paginate(page: params[:page])
     else

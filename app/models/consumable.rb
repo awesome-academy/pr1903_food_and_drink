@@ -20,3 +20,4 @@ class Consumable < ApplicationRecord
   validates :quantity, presence: true
   scope :by_name, -> (keyword) {where('name LIKE ?', "%#{keyword}%")}
 end
+
