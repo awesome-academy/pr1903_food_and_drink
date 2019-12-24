@@ -3,7 +3,11 @@ class RatingsController < ApplicationController
 
   def create
     @rating = current_user.ratings.new(rating_params)
+    consumable = @rating.consumable
     if @rating.save
+      ratings = Rating.of_consumable(consumable).pluck(:rating)
+      avg = Rating.calculate_average_rating(ratings)
+      consumable.update(rate_average: avg)
       redirect_to @rating.consumable
     else
       flash[:success] = "rating 1..5"
