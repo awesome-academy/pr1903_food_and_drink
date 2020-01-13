@@ -4,17 +4,29 @@
       <%# image_tag consumable.picture.preview(resize_to_limit: [100, 100]) %>
       <div class="card-body">
         <p class="card-text"><%= t(".name") %>:  <%= consumable.name %></p>
-        <p class="card-text"><%= t(".price")%>: <%= consumable.price %></p>
         <p class="card-text"><%= t(".rating") %>: <span style="color: red"><%= consumable.rate_average %></span></p>
-        <p class="card-text"><%= t(".out of stock") %></p>
-        <small><%= link_to t(".edit"), edit_consumable_path(consumable), remote: true %></small>
-        <small>
-          <%= link_to t(".delete"), consumable,
-                                method: :delete,
-                                remote: true,
-                                data: {confirm: "Are you sure?"}
-          %>
-        </small>
+        <p class="card-text"><%= t(".quantity") %>:<%= consumable.quantity %>  </p>
+        <% if logged_in? %>
+          <%= form_for @cart_item, remote: true do |f| %>
+            <h4 class="text-right">Price: <span style="color: green"><%= number_to_currency consumable.price %></span></h4>
+            <div class="input-group">
+              <%= f.number_field :quantity, value: 0, class: "form-control", min: 1 %>
+              <div class="input-group-btn">
+                <%= f.hidden_field :unit_price, value: consumable.price %>
+                <%= f.hidden_field :consumable_id, value: consumable.id %>
+                <%= f.submit "Add to Cart", class: "btn btn-primary" %>
+              </div>
+            </div>
+          <% end %>
+          <small><%= link_to t(".edit"), edit_consumable_path(consumable), remote: true %></small>
+          <small>
+            <%= link_to t(".delete"), consumable,
+                                  method: :delete,
+                                  remote: true,
+                                  data: {confirm: "Are you sure?"}
+            %>
+          </small>
+        <% end %>
         <small><%= link_to t(".show"), consumable%></small>
       </div>
     </div>
