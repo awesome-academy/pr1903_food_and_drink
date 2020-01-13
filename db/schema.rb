@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_11_125117) do
+ActiveRecord::Schema.define(version: 2020_01_07_124648) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -41,9 +41,18 @@ ActiveRecord::Schema.define(version: 2019_11_11_125117) do
     t.datetime "discarded_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "unit_price", precision: 12, scale: 3
+    t.decimal "total_price", precision: 12, scale: 3
     t.index ["cart_id"], name: "index_cart_items_on_cart_id"
     t.index ["consumable_id"], name: "index_cart_items_on_consumable_id"
     t.index ["discarded_at"], name: "index_cart_items_on_discarded_at"
+  end
+
+  create_table "cart_statuses", force: :cascade do |t|
+    t.string "name"
+    t.string "string"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "carts", force: :cascade do |t|
@@ -53,6 +62,12 @@ ActiveRecord::Schema.define(version: 2019_11_11_125117) do
     t.datetime "discarded_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "subtotal", precision: 12, scale: 3
+    t.decimal "tax", precision: 12, scale: 3
+    t.decimal "shipping", precision: 12, scale: 3
+    t.decimal "total", precision: 12, scale: 3
+    t.integer "cart_status_id"
+    t.index ["cart_status_id"], name: "index_carts_on_cart_status_id"
     t.index ["discarded_at"], name: "index_carts_on_discarded_at"
     t.index ["user_id"], name: "index_carts_on_user_id"
   end

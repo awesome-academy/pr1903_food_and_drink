@@ -6,6 +6,7 @@ class ConsumablesController < ApplicationController
 
   def index
     @categories = Category.all
+    @cart_item = current_cart.cart_items.new if logged_in?
     @consumables = if params[:term]
       Consumable.by_name(params[:term]).paginate(page: params[:page])
     else

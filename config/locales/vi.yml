@@ -32,6 +32,7 @@ vi:
       search: "Tìm kiếm"
       add consumable: " Thêm mặt hàng"
       name: "tên"
+      quantity: "số lượng"
     show:
       confirmation: " Xác nhận "
       rating: "Đánh giá "
@@ -39,6 +40,6 @@ vi:
       name: "tên"
       price: "giá"
       rating: "đánh giá"
-      out of stock: " hết hàng "
+      quantity: " Số lượng "
     ratings:
       rating not found: "không tìm thấy đánh giá"

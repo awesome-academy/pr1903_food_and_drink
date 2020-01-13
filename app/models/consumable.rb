@@ -2,10 +2,8 @@ class Consumable < ApplicationRecord
   include Discard::Model
 
   scope :not_discarded, -> { where(discarded_at: nil)}
-  # Ex:- scope :active, -> {where(:active => true)}
 
   has_many :cart_items
-  has_many :carts, through: :cart_items
   has_many :category_consumables
   has_many :categories, through: :category_consumables
   has_many :ratings
@@ -19,5 +17,6 @@ class Consumable < ApplicationRecord
   validates :price, presence: true
   validates :quantity, presence: true
   scope :by_name, -> (keyword) {where('name LIKE ?', "%#{keyword}%")}
+  # default_scope { where(active: true)}
 end
 
