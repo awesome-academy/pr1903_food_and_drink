@@ -47,3 +47,15 @@ en:
 
     ratings:
       rating not found: "rating not found"
+  admin:
+    consumables:
+      index:
+        add consumable: "Add consumables"
+        name: "name"
+        search: "search"
+        name: "name"
+        price: " price"
+        rating: "rating"
+        quantity: "quantity"
+
+

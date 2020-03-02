@@ -43,3 +43,10 @@ vi:
       quantity: " Số lượng "
     ratings:
       rating not found: "không tìm thấy đánh giá"
+  admin:
+    consumables:
+      index:
+        search: "Tìm kiếm"
+        add consumable: " Thêm mặt hàng"
+        name: "tên"
+        quantity: "số lượng"

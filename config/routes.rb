@@ -24,6 +24,10 @@ Rails.application.routes.draw do
       get :of_categories
     end
   end
+  namespace :admin do
+    resources :consumables, only: [:new, :edit, :update, :index]
+    resources :users
+  end
 
   root "static_pages#home"
 end
