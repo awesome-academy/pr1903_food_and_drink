@@ -18,7 +18,16 @@
               </div>
             </div>
           <% end %>
+          <small><%= link_to t(".edit"), edit_consumable_path(consumable), remote: true %></small>
+          <small>
+            <%= link_to t(".delete"), consumable,
+                                  method: :delete,
+                                  remote: true,
+                                  data: {confirm: "Are you sure?"}
+            %>
+          </small>
         <% end %>
+        <small><%= link_to t(".show"), consumable%></small>
       </div>
     </div>
   </div>

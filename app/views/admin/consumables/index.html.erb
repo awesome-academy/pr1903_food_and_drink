@@ -6,8 +6,13 @@
 <%= link_to category.category, category %>
 <% end %>
 <div class="container">
+  <% if logged_in? %>
+    <div>
+      <%= link_to t(".add consumable"), new_consumable_path, class: "btn btn-primary", remote: true %>
+    </div>
+  <% end %>
   <div class="row" id="consumables_list">
-    <%= render "consumables/consumables" %>
+    <%= render "consumables" %>
   </div>
 </div>
 <div id="consumable_modal"></div>

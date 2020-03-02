@@ -14,51 +14,8 @@ class ConsumablesController < ApplicationController
     end
   end
 
-  def new
-    @consumable = Consumable.new
-    respond_to do |format|
-      format.js
-    end
-  end
-
   def show
     @rating = calculate_rate(@consumable.ratings)
-  end
-
-  def create
-    @consumable = Consumable.new(consumable_params)
-    if @consumable.save
-      respond_to do |format|
-        format.js
-      end
-    else
-      render :index
-    end
-  end
-
-  def edit
-    respond_to do |format|
-      format.js
-    end
-  end
-
-  def update
-    if @consumable.update_attributes(consumable_params)
-      respond_to do |format|
-        format.js
-      end
-    else
-      render :index
-      flash[:danger] = "consumable not created"
-    end
-
-  end
-
-  def destroy
-    @consumable.discard
-    respond_to do |format|
-      format.js
-    end
   end
 
   private
