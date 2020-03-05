@@ -76,6 +76,6 @@ class Admin::ConsumablesController < ApplicationController
   end
 
   def consumable_params
-    params.require(:consumable).permit(:name, :description, :price, :quantity, pictures: [])
+    params.require(:consumable).permit(:name, :description, :price, :quantity, :pictures)
   end
 end

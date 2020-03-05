@@ -4,10 +4,11 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
   helper_method :current_cart
+  before_action :authenticate_user!
 
   def current_cart
     if logged_in?
-      if !session[:cart_id].nil?
+      if session[:cart_id].present?
         Cart.find(session[:cart_id])
       else
         Cart.new user_id: current_user.id

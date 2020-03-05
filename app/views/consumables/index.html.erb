@@ -1,3 +1,5 @@
+<div class="box-header"></div>
+<body>
 <%= form_tag(consumables_path, method: :get) do %>
   <%= text_field_tag :term %>
   <%= submit_tag t(".search") %>
@@ -11,3 +13,5 @@
   </div>
 </div>
 <div id="consumable_modal"></div>
+</body>
+</html>

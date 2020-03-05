@@ -6,6 +6,9 @@
         <p class="card-text"><%= t(".name") %>:  <%= consumable.name %></p>
         <p class="card-text"><%= t(".rating") %>: <span style="color: red"><%= consumable.rate_average %></span></p>
         <p class="card-text"><%= t(".quantity") %>:<%= consumable.quantity %>  </p>
+          <div class="thumb thumb-custom">
+            <%= image_tag consumable.pictures.url, class: "img-fluid img-consumable-home" %>
+          </div>
         <% if logged_in? %>
           <%= form_for @cart_item, remote: true do |f| %>
             <h4 class="text-right">Price: <span style="color: green"><%= number_to_currency consumable.price %></span></h4>
@@ -18,7 +21,7 @@
               </div>
             </div>
           <% end %>
-          <small><%= link_to t(".edit"), edit_consumable_path(consumable), remote: true %></small>
+          <small><%= link_to t(".edit"), edit_admin_consumable_path(consumable), remote: true %></small>
           <small>
             <%= link_to t(".delete"), consumable,
                                   method: :delete,

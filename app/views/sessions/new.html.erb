@@ -1,3 +1,4 @@
+<div class="box-header"></div>
 <% provide(:title, "Log in") %>
 <h1 style="text-align: center;">Log in</h1>
   <div class="row justify-content-center">
@@ -5,7 +6,7 @@
       <%= form_for(:session, url: login_path) do |f| %>
         <%= f.email_field :email, class: 'custom-form-control', placeholder: t(".email") %>
         <%= f.password_field :password, class: 'custom-form-control', placeholder: t(".password") %>
-        <%= f.submit "Create my account", class: "btn btn-green" %>
+        <%= f.submit "Log in", class: "btn btn-green" %>
       <% end %>
       <p>New user? <%= link_to "Sign up now!", signup_path %></p>
     </div>

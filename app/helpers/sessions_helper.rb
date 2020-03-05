@@ -16,4 +16,10 @@ module SessionsHelper
     @current_user = nil
   end
 
+  def authenticate_user!
+    unless current_user
+      flash[:danger] = t ".must_login"
+      redirect_to login_path
+    end
+  end
 end

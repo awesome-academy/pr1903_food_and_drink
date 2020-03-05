@@ -1,4 +1,5 @@
 class CategoryConsumablesController < ApplicationController
+  skip_before_action :authenticate_user!
 
   def new
     @category_consunable = CategoryConsumable.new(category_params)

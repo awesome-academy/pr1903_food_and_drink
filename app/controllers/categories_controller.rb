@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :find_category, only: [:show, :of_categories]
+  skip_before_action :authenticate_user!
 
   def index
     @categories = Category.all
