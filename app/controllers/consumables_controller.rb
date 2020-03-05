@@ -3,6 +3,7 @@ class ConsumablesController < ApplicationController
 
   before_action :find_consumable, except: [:index, :new, :create]
   before_action :find_consumables, except: [:show]
+  skip_before_action :authenticate_user!
 
   def index
     @categories = Category.all

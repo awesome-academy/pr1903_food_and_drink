@@ -16,7 +16,7 @@ body {
 
 .btn-green {
   background-color: #6db240;
-  color: #212529; 
+  color: #212529;
 }
 
 .custom-form-control {
@@ -40,4 +40,34 @@ body {
 
 .custom-input {
   border: none;
+}
+
+.slider_bg_1 {
+  background-image: url(asset_path("bradcam2.png"));
+}
+
+.slider_bg_2 {
+  background-image: url(asset_path("banner2.png"));
+}
+
+.slider_bg_3 {
+  background-image: url(asset_path("banner.png"));
+}
+
+.img-consumable-home {
+  height: 200px !important;
+}
+
+.thumb-custom {
+  width: 60%;
+
+  img {
+    width: 100%;
+  }
+}
+
+.box-header {
+  background-color: #1A0D01;
+  height: 100px;
+  width: 100%;
 }

@@ -1,4 +1,4 @@
-$("#consumable_modal").html("<%= j render 'consumables/edit' %>");
+$("#consumable_modal").html("<%= j render 'admin/consumables/edit' %>");
 $("#consumable_modal_edit").modal("show");
 if (<%=  @consumable.errors.present?  %>) {
   $("#myModalBuyRequest").on("click", function () {

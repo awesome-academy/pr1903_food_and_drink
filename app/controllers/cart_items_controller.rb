@@ -1,6 +1,7 @@
 class CartItemsController < ApplicationController
   before_action :find_cart, only: [:create, :update, :destroy]
   before_action :check_logged_in
+  skip_before_action :authenticate_user!
 
   def create
     @cart_item = @cart.cart_items.new(cart_items_params)

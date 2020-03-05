@@ -1,5 +1,6 @@
 class RatingsController < ApplicationController
   before_action :logged_in_user, only:[:create, :index]
+  skip_before_action :authenticate_user!
 
   def create
     @rating = current_user.ratings.new(rating_params)

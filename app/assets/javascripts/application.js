@@ -17,4 +17,7 @@
 //= require activestorage
 //= require turbolinks
 //= require activestorage
+//= require owl.carousel.min
+//= require jquery.slicknav.min
+//= require main
 //= require_tree .
